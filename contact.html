@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Contacte</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("g3Mddr3IThWVRje6A");
+        })();
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar__inner">
+                <div class="logo">
+                    <img src="img/logo.svg" alt="BDS Société Logo" />
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__menu-item"><a href="index.html">Accueil</a></li>
+                    <li class="navbar__menu-item"><a href="#">Electricité</a></li>
+                    <li class="navbar__menu-item"><a href="#">Plomberie</a></li>
+                    <li class="navbar__menu-item"><a href="#">Sanitaire</a></li>
+                    <li class="navbar__menu-item"><a href="#">Demolition</a></li>
+                    <li class="navbar__menu-item"><a href="#">Toiture</a></li>
+                    <li class="navbar__menu-item"><a href="#">Carrelage</a></li>
+                    <li class="navbar__menu-item"><a href="#">Cloisons</a></li>
+                </ul>
+                <div>
+                    <a class="button" href="contact.html">
+                        <strong>Contactez-<br>Nous</strong>
+                    </a>
+                </div>
+            </div>
+            <div class="sub_navbar">
+                <ul class="subnavbar__menu">
+                    <li><a href="#">Faux Plafonds</a></li>
+                    <li><a href="#">Enduisage</a></li>
+                    <li><a href="#">Peinture</a></li>
+                    <li><a href="#">Nettoyage</a></li>
+                    <li><a href="#">Data</a></li>
+                    <li><a href="#">Parlophonie</a></li>
+                    <li><a href="#">Chassis</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main >
+    
+        <main>
+        <section class="styled-contact">
+            <span>Nous</span> contacter
+        </section>
+            <section class="section-contact">
+                <div class="location">
+                    <div class="contenu">
+                        <span class="icon">📍</span>
+                        <h3>Notre emplacement</h3>
+                        <span>Pedestraat 82,</span>
+                        <span>Vlezenbeek, Belgique</span>
+                    </div>
+                </div>
+                <div class="information">
+                    <div class="contenu">
+                        <span class="icon">☎️</span>
+                        <h3>Informations de contact</h3>
+                        <span>Email : bdssociété1@gmail.com</span>
+                        <span>Téléphone : +123 456 789</span>
+                    </div>
+                </div>
+                <div class="disponible">
+                    <div class="contenu">
+                        <span class="icon">⏰</span>
+                        <h3>Disponible</h3>
+                        <span>Lundi - Vendredi : ..h - ..h</span>
+                        <span>Samedi : ..h - ..h</span>
+                        <span>Dimanche : ..h - ..h</span>
+                    </div>
+                </div>
+            </section>
+        
+            <div class="formulaire">
+                <h1>Prise de contact</h1>
+                <form>
+                    <label for="name">Nom & prénom</label>
+                    <input type="text" id="name" placeholder="Votre nom et prénom">
+        
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Votre email">
+        
+                    <label for="message">Service(s):</label>
+                    <textarea id="message" placeholder="Votre message" rows="3" style="height: 200px;"></textarea>
+        
+                    <button class="button" onclick="sendMail()">Envoyer</button>
+                </form>
+            </div>
+        </main>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact : </h3>
+                <p> Téléphone: +32 492 06 20 95</p>
+                <p>Email: contact@bds-societe.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 BDS Société. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script src="script/contact.js"></script>
+</body>
+
+</html>
