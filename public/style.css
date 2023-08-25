@@ -400,35 +400,76 @@ article a:hover {
 .contact-color {
   background-color: #f2f2f2 !important;
 }
+/* Cacher le logo "home.svg" en mode normal */
+nav.navbar .navbar__inner #left img {
+  display: none;
+}
+
 /* Media query for phones */
 @media (max-width: 767px) {
+  /* Styles pour la barre de navigation */
+  .navbar__inner {
+    display: flex;
+    justify-content: space-between; /* Place les éléments à gauche et à droite */
+    align-items: center; /* Centre les éléments verticalement */
+  }
+
   /* Hide the sub_navbar */
   .sub_navbar {
     display: none;
   }
 
-  /* Adjust header styles for phones */
-  header {
-    height: auto;
-  }
-
-  .navbar__inner {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
+  main.special {
+    margin-top: 150px;
   }
   main {
-    padding: 10px;
+    padding: 20px;
+  }
+  .logo {
+    text-align: center;
   }
 
-  .logo img {
-    height: 80px; /* Adjust the logo size */
-    margin-top: 20px; /* Add some top margin */
+  nav.navbar .navbar__inner .logo img {
+    height: 150px !important; /* Adjust the logo size */
+    margin-top: 20px; /* Add some top ∑margin */
+  }
+  nav.navbar .navbar__inner #left {
+    display: block;
+    margin-left: 10px; /* Ajoutez un peu de marge */
+  }
+  nav.navbar .navbar__inner #left img {
+    height: 90px !important;
   }
 
+  /* Styles pour le bouton "Contactez-Nous" */
+  nav.navbar .navbar__inner #right {
+    margin-right: 20px; /* Marge à droite */
+  }
+
+  /* Déplace le bouton de contact à droite */
   .button {
-    margin-top: 20px; /* Add some top margin */
-    padding: 8px 16px; /* Adjust button padding */
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 8px 16px;
+  }
+
+  /* Ajoute un effet d'ombre au bouton de contact */
+  .button {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Effet de survol pour le bouton de contact */
+  .button:hover {
+    background-color: #bf820b;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+  }
+  .splide {
+    position: fixed;
+    margin-top: 90px;
+  }
+  .splide__slide {
+    margin-top: 100px;
   }
   .splide__slide h1 {
     font-size: 38px;
@@ -436,6 +477,15 @@ article a:hover {
 
   /* Hide the regular menu items */
   .navbar__menu {
+    display: none;
+  }
+  section.styled-contact {
+    font-size: 20px !important;
+  }
+
+  .section-contact .location,
+  .section-contact .information,
+  .section-contact .disponible {
     display: none;
   }
 

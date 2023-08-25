@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap"
@@ -28,7 +28,10 @@
                     <li class="navbar__menu-item"><a href="#">Carrelage</a></li>
                     <li class="navbar__menu-item"><a href="#">Cloisons</a></li>
                 </ul>
-                <div>
+                <div id="left">
+                <img src="img/home.svg" href="index.html">
+                </div>
+                <div id="right">
                     <a class="button" href="contact.html">
                         <strong>Contactez-<br>Nous</strong>
                     </a>
@@ -47,7 +50,7 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="special">
         <section class="styled-contact">
             <span>Nous</span> contacter
         </section>
@@ -89,7 +92,7 @@
                 <input type="email" name="email" id="email" placeholder="Votre email" required>
 
                 <label for="subject">Service(s)</label>
-               <input type="text" name="subject" id="subject" placeholder="">
+                <input type="text" name="subject" id="subject" placeholder="">
 
                 <label for="message">Message:</label>
                 <textarea name="message" id="message" placeholder="Votre message" rows="10" required></textarea>
@@ -117,8 +120,8 @@
     <script src="contact.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
-    emailjs.init('VoU0egvxadWz2v9Zb')
-  </script>
+        emailjs.init('VoU0egvxadWz2v9Zb')
+    </script>
 </body>
 
 </html>
