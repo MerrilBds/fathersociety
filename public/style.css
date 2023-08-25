@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;0,700;0,800;0,900;1,100&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -31,7 +33,7 @@ header {
 .navbar__inner {
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #402a23;
+  border-bottom: 2px solid #bf820b;
   height: 150px;
 }
 .navbar__menu {
@@ -104,35 +106,33 @@ main {
 
 /* Pied de page */
 footer {
-    background-color: #213;
-    color:aliceblue;
-    text-align: center;
-    padding: 2rem 0;
+  background-color: #213;
+  color: aliceblue;
+  text-align: center;
+  padding: 2rem 0;
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .contact-info {
-    flex: 1;
+  flex: 1;
 }
 
 .contact-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
-
 
 .copyright {
-    margin-top: 1rem;
-    color: #bf820b;
+  margin-top: 1rem;
+  color: #bf820b;
 }
-
 
 /* Styles pour la section "Contact" */
 .styled-contact {
@@ -184,6 +184,7 @@ footer {
 }
 
 .splide__slide {
+  background-color: #213;
   height: 500px;
   width: 100%;
   top: 0;
@@ -195,9 +196,10 @@ footer {
   height: 500px;
 }
 .splide__slide h1 {
-  font-weight: bold;
-  font-size: 58px;
-  color: #213;
+  font-family: "Montserrat", italic;
+  font-weight: lighter;
+  font-size: 2.5rem;
+  color: whitesmoke;
 }
 
 .box1 img {
@@ -214,137 +216,135 @@ footer {
 
 /* Effet de survol pour les liens du menu */
 .navbar__menu-item a:hover {
-    color: #66ccff;
+  color: #66ccff;
 }
 /* Animation pour le bouton "Contacter-Nous" */
 header div a.button {
-    display: inline-block;
-    height: 50px;
-    background-color: #bf820b;
-    margin-right: 20px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  height: 50px;
+  background-color: #bf820b;
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .button:hover {
-    background-color: #3388cc;
-    transform: scale(1.05);
+  background-color: #3388cc;
+  transform: scale(1.05);
 }
 
- 
 /* Animation pour le logo */
 .logo img {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .logo img:hover {
-    transform: rotate(10deg);
+  transform: rotate(10deg);
 }
-
-
 
 /* Animation pour les images de la bannière */
 .splide__slide img {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .splide__slide img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
-
 
 /* Stylisation de la section des services */
 article {
-    background-color: #f9f9f9;
-    padding: 3rem 0;
-    text-align: center;
+  background-color: #f9f9f9;
+  padding: 3rem 0;
+  text-align: center;
 }
 
 article h1 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #333;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
 article p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
 }
 
 article ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 0;
 }
 
 article li {
-    background-color: white;
-    padding: 1.5rem;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  padding: 1.5rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 article li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
 article a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 article a:hover {
-    color: #bf820b;
+  color: #bf820b;
 }
 /* Styles pour l'image avec le texte superposé */
 .image-with-text {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .image-with-text img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .text-overlay {
-    position: absolute;
-    top : 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    padding: 20px;
-    padding-bottom: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform: translateX(0); /* Modifier ceci pour afficher le texte dès le début */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 20px;
+  padding-bottom: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateX(
+    0
+  ); /* Modifier ceci pour afficher le texte dès le début */
 }
 
 .text-overlay h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .text-overlay p {
-    font-size: 1rem;
-    margin: 0;
+  font-size: 1rem;
+  margin: 0;
 }
 /* Votre style actuel ici */
 
@@ -382,7 +382,7 @@ article a:hover {
   resize: vertical;
 }
 
-.formulaire button {
+.formulaire .button {
   background-color: #bf820b;
   color: white;
   padding: 10px 20px;
@@ -393,12 +393,12 @@ article a:hover {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.formulaire button:hover {
+.formulaire .button:hover {
   background-color: #3388cc;
   transform: scale(1.05);
 }
-.contact-color{
-  background-color:#f2f2f2 !important;
+.contact-color {
+  background-color: #f2f2f2 !important;
 }
 /* Media query for phones */
 @media (max-width: 767px) {
@@ -417,7 +417,7 @@ article a:hover {
     align-items: center;
     height: auto;
   }
-  main{
+  main {
     padding: 10px;
   }
 
@@ -430,13 +430,8 @@ article a:hover {
     margin-top: 20px; /* Add some top margin */
     padding: 8px 16px; /* Adjust button padding */
   }
-
-/* Add styles for the mobile menu icon */
-  .mobile-menu-icon {
-    font-size: 24px;
-    cursor: pointer;
-    margin: 10px 0;
-    color: #213; /* Adjust the color as needed */
+  .splide__slide h1 {
+    font-size: 38px;
   }
 
   /* Hide the regular menu items */
@@ -444,12 +439,6 @@ article a:hover {
     display: none;
   }
 
-  /* Show the mobile menu items when the icon is clicked */
-  .navbar__menu.show-mobile-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   /* Adjust styles for the contact form */
   .formulaire {
     max-width: 100%;

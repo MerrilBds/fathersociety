@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "bdssociete-1"
-  }
+  },
+  "targets": {
+    "bdssociete-1": {
+      "hosting": {
+        "https:///bdssociete.com": [
+          "bdssociete"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
