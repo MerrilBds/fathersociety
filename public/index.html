@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,15 @@
         <div class="logo">
           <img src="img/logo.svg" alt="BDS Société Logo" />
         </div>
-        <ul class="navbar__menu">
+
+        <!-- Bouton hamburger (visible mobile) -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul class="navbar__menu" id="menu">
           <li class="navbar__menu-item"><a href="index.html">Accueil</a></li>
           <li class="navbar__menu-item"><a href="#">Electricité</a></li>
           <li class="navbar__menu-item"><a href="#">Plomberie</a></li>
@@ -29,15 +37,20 @@
           <li class="navbar__menu-item"><a href="#">Carrelage</a></li>
           <li class="navbar__menu-item"><a href="#">Cloisons</a></li>
         </ul>
+
         <div id="left">
-          <img src="img/home.svg" href="index.html">
+          <a href="index.html">
+            <img src="img/home.svg" alt="Accueil">
+          </a>
         </div>
+
         <div id="right">
           <a class="button" href="contact.html">
             <strong>Contactez-<br>Nous</strong>
           </a>
         </div>
       </div>
+
       <div class="sub_navbar">
         <ul class="subnavbar__menu">
           <li><a href="#">Faux Plafonds</a></li>
@@ -70,6 +83,7 @@
                 répondent aux besoins uniques de nos clients.</p>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
               <img src="img/enduisage.jpg" alt="Enduisage">
@@ -89,24 +103,27 @@
               </div>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
-              <img src="img/plomberie.jpg" alt="plomberie">
+              <img src="img/plomberie.jpg" alt="Plomberie">
               <div class="text-overlay">
                 <h2>Société Générale de Rénovation de Bâtiment</h2>
                 <p>Plomberie</p>
               </div>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
-              <img src="img/toiture.jpg" alt="toiture">
+              <img src="img/toiture.jpg" alt="Toiture">
               <div class="text-overlay">
                 <h2>Société Générale de Rénovation de Bâtiment</h2>
                 <p>Toiture</p>
               </div>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
               <img src="img/electricite.jpg" alt="Electricité">
@@ -116,6 +133,7 @@
               </div>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
               <img src="img/parlophonie.jpg" alt="Parlophonie">
@@ -125,6 +143,7 @@
               </div>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
               <img src="img/data.jpg" alt="Data">
@@ -134,6 +153,7 @@
               </div>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
               <img src="img/demolition.jpg" alt="Démolition">
@@ -143,6 +163,7 @@
               </div>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
               <img src="img/nettoyage.jpg" alt="Nettoyage">
@@ -152,15 +173,17 @@
               </div>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
-              <img src="img/carrelage.jpg" alt="carrelage">
+              <img src="img/carrelage.jpg" alt="Carrelage">
               <div class="text-overlay">
                 <h2>Société Générale de Rénovation de Bâtiment</h2>
                 <p>Carrelage</p>
               </div>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
               <img src="img/peinture.jpg" alt="Peinture">
@@ -170,18 +193,20 @@
               </div>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
-              <img src="img/cloisons.jpg" alt="cloisons">
+              <img src="img/cloisons.jpg" alt="Cloisons">
               <div class="text-overlay">
                 <h2>Société Générale de Rénovation de Bâtiment</h2>
                 <p>Cloisons</p>
               </div>
             </div>
           </li>
+
           <li class="splide__slide">
             <div class="image-with-text">
-              <img src="img/chassis.jpg" alt="chassis">
+              <img src="img/chassis.jpg" alt="Châssis">
               <div class="text-overlay">
                 <h2>Société Générale de Rénovation de Bâtiment</h2>
                 <p>Châssis</p>
@@ -191,76 +216,47 @@
         </ul>
       </div>
     </div>
+
     <article>
       <h1>Services</h1>
       <p>Si vous avez le projet de rénover votre maison , vous pouvez contactez notre société ,
-        nous répondrons à vos attentes. </p>
+        nous répondrons à vos attentes.</p>
       <ul>
-        <li>
-          <a href="#">Électricité</a>
-        </li>
-        <li><a href="#">Faux Plafonds</a>
-        </li>
-        <li><a href="#">Démolition</a>
-        </li>
-        <li> <a href="#">Toiture</a>
-        </li>
-        <li> <a href="#">Enduisage</a>
-        </li>
-        <li> <a href="#">Data</a>
-        </li>
-        <li><a href="#">Parlophonie</a>
-        </li>
-        <li> <a href="#">Nettoyage</a>
-        </li>
-        <li> <a href="#">Chassis</a>
-        </li>
-        <li> <a href="#">Cloisons</a>
-        </li>
-        <li> <a href="#">Carrelage</a>
-        </li>
-        <li> <a href="#">Peinture</a>
-        </li>
-        <li> <a href="#">Sanitaire</a>
-        </li>
-        <li> <a href="#">Construction</a>
-        </li>
-        <li> <a href="#">Peinture</a>
-        </li>
-        <li> <a href="#">Plomberie</a>
-        </li>
-        <li> <a href="#">Déménagement</a>
-        </li>
-        <li> <a href="#">Horeca</a>
-        </li>
-        <li> <a href="#">Parquet</a>
-        </li>
-        <li> <a href="#">Maçonnerie</a>
-        </li>
-        <li> <a href="#">Menuiserie</a>
-        </li>
-        <li> <a href="#">Tapissage</a>
-        </li>
-        <li> <a href="#">Plafonnage</a>
-        </li>
-        <li> <a href="#">Finitions</a>
-        </li>
-        <li> <a href="#">Chauffage </a>
-        </li>
-        <li> <a href="#">Chape</a>
-        </li>
-
+        <li><a href="#">Électricité</a></li>
+        <li><a href="#">Faux Plafonds</a></li>
+        <li><a href="#">Démolition</a></li>
+        <li><a href="#">Toiture</a></li>
+        <li><a href="#">Enduisage</a></li>
+        <li><a href="#">Data</a></li>
+        <li><a href="#">Parlophonie</a></li>
+        <li><a href="#">Nettoyage</a></li>
+        <li><a href="#">Chassis</a></li>
+        <li><a href="#">Cloisons</a></li>
+        <li><a href="#">Carrelage</a></li>
+        <li><a href="#">Peinture</a></li>
+        <li><a href="#">Sanitaire</a></li>
+        <li><a href="#">Construction</a></li>
+        <li><a href="#">Plomberie</a></li>
+        <li><a href="#">Déménagement</a></li>
+        <li><a href="#">Horeca</a></li>
+        <li><a href="#">Parquet</a></li>
+        <li><a href="#">Maçonnerie</a></li>
+        <li><a href="#">Menuiserie</a></li>
+        <li><a href="#">Tapissage</a></li>
+        <li><a href="#">Plafonnage</a></li>
+        <li><a href="#">Finitions</a></li>
+        <li><a href="#">Chauffage </a></li>
+        <li><a href="#">Chape</a></li>
       </ul>
     </article>
-
   </main>
 
   <footer>
     <div class="footer-content">
       <div class="contact-info">
-        <h3>Contact : </h3>
+        <h3>Contact :</h3>
         <p>Téléphone: +32 492 06 20 95</p>
-        <p>Email: manuelbensbdssociete@gmail.com</p>
+        <p>Email: manuelbensbdssociete@gmail.com<</p>
       </div>
     </div>
     <div class="copyright">
