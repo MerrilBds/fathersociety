@@ -1,25 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // --- SLIDER SPLIDE ---
     new Splide('.splide', {
-        type: 'loop', // Permet le défilement en boucle
-        perPage: 1,   // Nombre d'images affichées à la fois
-        arrows: true, // Affiche les flèches de navigation
-        autoplay: true, // Active l'autoplay
-        interval: 4000, // Intervalle de temps en millisecondes entre chaque diapositive (par exemple, 3000 = 3 secondes)
-        fade: true, // Active l'effet de fondu (fade)
-        speed: 1000, // Vitesse de transition en millisecondes (par exemple, 1000 = 1 seconde)
+        type: 'loop',
+        perPage: 1,
+        arrows: true,
+        autoplay: true,
+        interval: 4000,
+        fade: true,
+        speed: 1000,
     }).mount();
-});
 
-
-// JavaScript to automatically add the mobile menu icon
-window.addEventListener('load', function () {
+    // --- NAVBAR MOBILE BURGER ---
     const navbarMenu = document.querySelector('.navbar__menu');
     const mobileMenuIcon = document.createElement('div');
     mobileMenuIcon.classList.add('mobile-menu-icon');
-    mobileMenuIcon.innerHTML = '<span>&#9776;</span>'; // You can adjust the icon as needed
-    navbarMenu.insertBefore(mobileMenuIcon, navbarMenu.firstChild);
+    mobileMenuIcon.innerHTML = '<span>&#9776;</span>'; // Icône hamburger
+    document.querySelector('.navbar').appendChild(mobileMenuIcon);
 
     mobileMenuIcon.addEventListener('click', function () {
         navbarMenu.classList.toggle('show-mobile-menu');
     });
+});
+
+// --- NAVBAR CHANGE AU SCROLL ---
+window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
 });
