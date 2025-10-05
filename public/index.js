@@ -9,17 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
         fade: true,
         speed: 1000,
     }).mount();
-
-    // --- NAVBAR MOBILE BURGER ---
-    const navbarMenu = document.querySelector('.navbar__menu');
-    const mobileMenuIcon = document.createElement('div');
-    mobileMenuIcon.classList.add('mobile-menu-icon');
-    mobileMenuIcon.innerHTML = '<span>&#9776;</span>'; // Icône hamburger
-    document.querySelector('.navbar').appendChild(mobileMenuIcon);
-
-    mobileMenuIcon.addEventListener('click', function () {
-        navbarMenu.classList.toggle('show-mobile-menu');
-    });
 });
 
 // --- NAVBAR CHANGE AU SCROLL ---
