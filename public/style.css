@@ -502,131 +502,56 @@ nav.navbar .navbar__inner #left img {
 }
 
 
-
-/* SECTION AVANT / APRÈS */
-.before-after-section {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: #f9f9f9;
-}
-
-.before-after-section h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.before-after-section p {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-/* Conteneur global */
-.before-after-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-}
-
-/* Bloc avant/après */
-.before-after-item {
-  background: white;
-  padding: 1rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 600px; /* limite la largeur maximale */
-}
-
-.before-after-item h3 {
-  font-family: 'Raleway', sans-serif;
-  margin-bottom: 1rem;
-}
-
-/* Slider */
-.before-after-slider {
+.before-after-hover {
   position: relative;
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9; /* garde les proportions d’image */
+  max-width: 600px;
+  height: 400px;
   overflow: hidden;
   border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
 }
 
-/* Images */
-.before-after-slider img {
+.before-after-hover img {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-}
-
-/* Image “après” */
-.after-image-wrapper {
-  position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  transition: width 0.4s ease;
+  transition: clip-path 0.8s ease, opacity 0.8s ease;
 }
 
-.after-image {
+.before-after-hover .before {
+  z-index: 1;
+}
+
+.before-after-hover .after {
+  z-index: 2;
+  clip-path: inset(0 100% 0 0);
+}
+
+.before-after-hover:hover .after {
+  clip-path: inset(0 0 0 0);
+}
+
+.before-after-hover .label {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  bottom: 10px;
+  padding: 6px 12px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  border-radius: 4px;
 }
 
-/* Poignée de glissement */
-.slider-handle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  cursor: ew-resize;
-  transition: background 0.3s;
+.before-label {
+  left: 10px;
 }
 
-.slider-handle:hover {
-  background: rgba(255, 255, 255, 1);
+.after-label {
+  right: 10px;
 }
 
-.arrow {
-  font-size: 18px;
-  color: #333;
-  user-select: none;
-}
-
-.arrow-left {
-  margin-right: 5px;
-}
-
-.arrow-right {
-  margin-left: 5px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .before-after-gallery {
-    grid-template-columns: 1fr;
-  }
-  .before-after-item {
-    max-width: 100%;
-  }
-}
