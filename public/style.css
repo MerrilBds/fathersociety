@@ -503,3 +503,90 @@ nav.navbar .navbar__inner #left img {
     margin: 5px 0;
   }
 }
+/* --- Section Avant / Après --- */
+.before-after-section {
+  background-color: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.before-after-section h1 {
+  font-size: 2rem;
+  color: #213;
+  margin-bottom: 1rem;
+}
+
+.before-after-section p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.before-after-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: start;
+}
+
+.before-after-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.before-after-item:hover {
+  transform: translateY(-5px);
+}
+
+.before-after-item h3 {
+  color: #bf820b;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Conteneur des deux images */
+.before-after-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Image avant */
+.before-after-wrapper .before {
+  width: 100%;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+/* Image après par-dessus */
+.before-after-wrapper .after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  border-left: 3px solid #bf820b;
+  transition: all 0.4s ease;
+}
+
+/* Effet au survol : montre plus du "après" */
+.before-after-wrapper:hover .after {
+  left: 0;
+  width: 100%;
+  border-left: none;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .before-after-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
