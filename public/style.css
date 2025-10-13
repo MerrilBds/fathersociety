@@ -503,90 +503,102 @@ nav.navbar .navbar__inner #left img {
     margin: 5px 0;
   }
 }
-/* --- Section Avant / Après --- */
-.before-after-section {
-  background-color: #fff;
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-.before-after-section h1 {
-  font-size: 2rem;
-  color: #213;
-  margin-bottom: 1rem;
-}
-
-.before-after-section p {
-  color: #555;
-  font-size: 1.1rem;
-  margin-bottom: 3rem;
-}
-
-.before-after-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  justify-content: center;
-  align-items: start;
-}
-
-.before-after-item {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  padding: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.before-after-item:hover {
-  transform: translateY(-5px);
-}
-
-.before-after-item h3 {
-  color: #bf820b;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-/* Conteneur des deux images */
-.before-after-wrapper {
+/* --- Effet Avant / Après glissable --- */
+.before-after-slider {
   position: relative;
   width: 100%;
+  max-width: 600px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  margin: 0 auto;
+}
+
+.before-after-slider img {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
 }
 
 /* Image avant */
-.before-after-wrapper .before {
-  width: 100%;
-  display: block;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
+.before-image {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-/* Image après par-dessus */
-.before-after-wrapper .after {
+/* Image après (masquée partiellement) */
+.after-image-wrapper {
   position: absolute;
   top: 0;
   left: 50%;
   width: 50%;
   height: 100%;
-  object-fit: cover;
-  border-left: 3px solid #bf820b;
-  transition: all 0.4s ease;
+  overflow: hidden;
+  transition: left 0.3s ease;
 }
 
-/* Effet au survol : montre plus du "après" */
-.before-after-wrapper:hover .after {
-  left: 0;
-  width: 100%;
-  border-left: none;
+.after-image {
+  width: 200%;
+  position: relative;
+  left: -50%;
+}
+
+/* Le curseur central avec flèches */
+.slider-handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #bf820b;
+  cursor: ew-resize;
+  z-index: 10;
+  transition: left 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-handle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  border: 3px solid #bf820b;
+  z-index: -1;
+}
+
+/* Flèches dans le cercle */
+.arrow {
+  color: #bf820b;
+  font-size: 1.8rem;
+  pointer-events: none;
+  position: absolute;
+}
+
+.arrow-left {
+  left: -20px;
+}
+
+.arrow-right {
+  right: -20px;
+}
+
+/* Effet au survol */
+.before-after-slider:hover .slider-handle::before {
+  background: #f7f7f7;
 }
 
 /* Responsive */
-@media (max-width: 767px) {
-  .before-after-gallery {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .before-after-slider {
+    max-width: 100%;
   }
 }
-
