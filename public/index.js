@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // --- SLIDER SPLIDE ---
-    new Splide('.splide', {
-        type: 'loop',
-        perPage: 1,
-        arrows: true,
-        autoplay: true,
-        interval: 4000,
-        fade: true,
-        speed: 1000,
-    }).mount();
+  // --- SLIDER GALLERY SPLIDE ---
+  new Splide('#gallery-carousel', {
+    type: 'loop',
+    perPage: 1,
+    autoplay: true,
+    interval: 4000,
+    pauseOnHover: true,
+    speed: 800,
+    arrows: true,
+    pagination: true,
+  }).mount();
 });
+
 
 // --- NAVBAR CHANGE AU SCROLL ---
 window.addEventListener("scroll", function () {
