@@ -1,14 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
-  /* ===== Header scroll state ===== */
-  const header = document.querySelector('.site-header');
-  const onScroll = () => {
-    if (window.scrollY > 60) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* ===== Mobile menu (fullscreen) ===== */
+  /* ================== HEADER TRANSPARENT → SCROLL ================== */
+  const header = document.querySelector('.site-header');
+  function handleScroll() {
+    if (window.scrollY > 60) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  handleScroll();
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+
+  /* ================== MENU MOBILE FULLSCREEN ================== */
   const burger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   const closeMenu = document.getElementById('closeMenu');
@@ -18,54 +23,54 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = 'hidden';
     mobileMenu.setAttribute('aria-hidden', 'false');
   };
+
   const closeMobile = () => {
     mobileMenu.classList.remove('open');
     document.body.style.overflow = '';
     mobileMenu.setAttribute('aria-hidden', 'true');
   };
 
-  burger?.addEventListener('click', openMobile);
-  closeMenu?.addEventListener('click', closeMobile);
+  if (burger) burger.addEventListener('click', openMobile);
+  if (closeMenu) closeMenu.addEventListener('click', closeMobile);
+
+  // Ferme si on clique sur l'arrière-plan
   mobileMenu?.addEventListener('click', (e) => {
     if (e.target === mobileMenu) closeMobile();
   });
 
-  /* ===== Splide: main slider (70vh) ===== */
-  const mainSliderEl = document.getElementById('main-slider');
-  if (mainSliderEl) {
-    new Splide(mainSliderEl, {
+
+  /* ================== SLIDER PRINCIPAL (HERO - 70vh) ================== */
+  const mainSlider = document.getElementById('main-slider');
+  if (mainSlider) {
+    new Splide(mainSlider, {
       type: 'loop',
       perPage: 1,
-      arrows: true,
       autoplay: true,
       interval: 4500,
       speed: 900,
-      rewind: true,
-      pagination: true,
       pauseOnHover: false,
       pauseOnFocus: false,
-      classes: {
-        arrows: 'splide__arrows hero__arrows',
-      },
+      arrows: true,
+      pagination: true,
+      rewind: true,
     }).mount();
   }
 
-  /* ===== Splide: gallery carousel (16:9) ===== */
-  const galleryEl = document.getElementById('gallery-carousel');
-  if (galleryEl) {
-    new Splide(galleryEl, {
+
+  /* ================== SLIDER GALLERY (Avant/Après) ================== */
+  const gallerySlider = document.getElementById('gallery-carousel');
+  if (gallerySlider) {
+    new Splide(gallerySlider, {
       type: 'loop',
       perPage: 1,
-      gap: '16px',
-      arrows: true,
       autoplay: true,
-      interval: 3800,
-      speed: 700,
-      rewind: true,
+      interval: 4000,
+      pauseOnHover: true,
+      speed: 800,
+      arrows: true,
       pagination: true,
-      breakpoints: {
-        768: { gap: '10px' }
-      }
+      rewind: true,
     }).mount();
   }
+
 });
