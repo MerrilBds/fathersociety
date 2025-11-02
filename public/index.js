@@ -1,46 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // --- SLIDER HERO (principal) ---
-  const hero = document.querySelector('.hero-splide');
+  /* HERO SPLIDE */
+  const hero = document.querySelector('.splide-hero');
   if (hero) {
     new Splide(hero, {
       type: 'loop',
       perPage: 1,
-      arrows: true,
       autoplay: true,
-      interval: 4000,
+      interval: 4200,
+      speed: 850,
       pauseOnHover: true,
-      speed: 900,
-      rewind: true,
+      arrows: true,
       pagination: true,
-      // le fade de Splide nécessite l'extension; si non incluse, on reste en slide
-      // use: 'fade' si tu ajoutes l’extension correspondante.
     }).mount();
   }
 
-  // --- SLIDER GALLERY ---
-  const gallery = document.getElementById('gallery-carousel');
+  /* GALLERY SPLIDE */
+  const gallery = document.querySelector('#gallery-carousel');
   if (gallery) {
     new Splide(gallery, {
       type: 'loop',
       perPage: 1,
       autoplay: true,
-      interval: 4200,
-      pauseOnHover: true,
+      interval: 4000,
       speed: 800,
+      pauseOnHover: true,
       arrows: true,
       pagination: true,
     }).mount();
   }
 
-  // --- SUB NAVBAR EFFECT ON SCROLL (>= 20px) ---
-  const subNav = document.getElementById('subNav');
-  const SCROLL_TRIGGER = 20; // M2
-  const toggleSubNav = () => {
-    if (!subNav) return;
-    if (window.scrollY > SCROLL_TRIGGER) subNav.classList.add('sub-scrolled');
-    else subNav.classList.remove('sub-scrolled');
+  /* SCROLL EFFECT UNIQUEMENT SUR LA SUB_NAVBAR */
+  const subbar = document.getElementById('subbar');
+  const onScroll = () => {
+    if (!subbar) return;
+    if (window.scrollY > 20) subbar.classList.add('scrolled');
+    else subbar.classList.remove('scrolled');
   };
-
-  toggleSubNav();
-  window.addEventListener('scroll', toggleSubNav, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // état initial
 });
