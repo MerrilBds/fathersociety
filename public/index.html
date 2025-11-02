@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap"
-    rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>BDS Société - Rénovation de Bâtiments</title>
+
+  <!-- Fonts + Splide CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet"/>
 </head>
 
 <body>
+  <!-- ================= HEADER ================= -->
   <header>
     <nav class="navbar">
       <div class="navbar__inner">
         <div class="logo">
           <img src="img/logo.svg" alt="BDS Société Logo" />
         </div>
+
         <ul class="navbar__menu">
           <li class="navbar__menu-item"><a href="index.html">Accueil</a></li>
           <li class="navbar__menu-item"><a href="#">Electricité</a></li>
@@ -35,17 +37,22 @@
           <li class="navbar__menu-item"><a href="#">Construction</a></li>
           <li class="navbar__menu-item"><a href="#">Menuiserie</a></li>
         </ul>
+
         <div id="left">
-          <img src="img/home.svg" href="index.html">
+          <a href="index.html" aria-label="Accueil">
+            <img src="img/home.svg" alt="Accueil"/>
+          </a>
         </div>
+
         <div id="right">
           <a class="button" href="contact.html">
-            <strong>Contactez-<br />Nous</strong>
+            <strong>Contactez-<br/>Nous</strong>
           </a>
         </div>
       </div>
 
-      <div class="sub_navbar">
+      <!-- Sub-navbar (glow & blur appliqués au scroll) -->
+      <div class="sub_navbar" id="subNav">
         <ul class="subnavbar__menu">
           <li><a href="#">Faux Plafonds</a></li>
           <li><a href="#">Enduisage</a></li>
@@ -59,63 +66,58 @@
     </nav>
   </header>
 
+  <!-- ================= MAIN ================= -->
   <main>
-    <!-- SLIDER PRINCIPAL -->
-    <div class="splide main-slider fade-in">
+    <!-- SLIDER PRINCIPAL (Hero) -->
+    <div class="splide hero-splide" aria-label="BDS Société - Présentation">
       <div class="splide__track">
         <ul class="splide__list">
-          <li class="splide__slide">
-            <h1>Qui Sommes-Nous?</h1>
-            <div class="box1">
-              <img src="img/logo-trans.svg" alt="BDS Société Logo Transparent" class="logo-transparent" />
-              <p>
-                La BDS Société est une entreprise de rénovation de bâtiment spécialisée dans la
-                transformation et l'amélioration de l'environnement bâti. Notre équipe propose une
-                variété de services, notamment l'électricité, la plomberie, le sanitaire, la démolition,
-                la toiture, le carrelage, la réalisation de cloisons, et bien d'autres. Notre engagement
-                envers l'excellence et l'innovation nous permet de créer des espaces fonctionnels et
-                esthétiques qui répondent aux besoins uniques de nos clients.
-              </p>
-            </div>
-          </li>
-
-          <li class="splide__slide">
-            <div class="image-with-text">
-              <img src="img/enduisage.jpg" alt="Enduisage" />
-              <div class="text-overlay">
-                <h2>Société Générale de Rénovation de Bâtiment</h2>
-                <p>Enduisage</p>
+          <li class="splide__slide hero-slide">
+            <div class="hero-slide__inner">
+              <h1>Qui Sommes-Nous ?</h1>
+              <div class="box1">
+                <img src="img/logo-trans.svg" alt="BDS Société Logo Transparent" class="logo-transparent"/>
+                <p>
+                  La BDS Société est une entreprise de rénovation de bâtiment spécialisée dans la
+                  transformation et l'amélioration de l'environnement bâti. Notre équipe propose une
+                  variété de services, notamment l'électricité, la plomberie, le sanitaire, la démolition,
+                  la toiture, le carrelage, la réalisation de cloisons, et bien d'autres. Notre engagement
+                  envers l'excellence et l'innovation nous permet de créer des espaces fonctionnels et
+                  esthétiques qui répondent aux besoins uniques de nos clients.
+                </p>
               </div>
             </div>
           </li>
 
-          <li class="splide__slide">
-            <div class="image-with-text">
-              <img src="img/f-pf.jpg" alt="Faux-Plafonds" />
-              <div class="text-overlay">
-                <h2>Société Générale de Rénovation de Bâtiment</h2>
-                <p>Faux-Plafonds</p>
-              </div>
+          <li class="splide__slide image-with-text">
+            <img src="img/enduisage.jpg" alt="Enduisage">
+            <div class="text-overlay">
+              <h2>Société Générale de Rénovation de Bâtiment</h2>
+              <p>Enduisage</p>
             </div>
           </li>
 
-          <li class="splide__slide">
-            <div class="image-with-text">
-              <img src="img/plomberie.jpg" alt="Plomberie" />
-              <div class="text-overlay">
-                <h2>Société Générale de Rénovation de Bâtiment</h2>
-                <p>Plomberie</p>
-              </div>
+          <li class="splide__slide image-with-text">
+            <img src="img/f-pf.jpg" alt="Faux-Plafonds">
+            <div class="text-overlay">
+              <h2>Société Générale de Rénovation de Bâtiment</h2>
+              <p>Faux-Plafonds</p>
             </div>
           </li>
 
-          <li class="splide__slide">
-            <div class="image-with-text">
-              <img src="img/toiture.jpg" alt="Toiture" />
-              <div class="text-overlay">
-                <h2>Société Générale de Rénovation de Bâtiment</h2>
-                <p>Toiture</p>
-              </div>
+          <li class="splide__slide image-with-text">
+            <img src="img/plomberie.jpg" alt="Plomberie">
+            <div class="text-overlay">
+              <h2>Société Générale de Rénovation de Bâtiment</h2>
+              <p>Plomberie</p>
+            </div>
+          </li>
+
+          <li class="splide__slide image-with-text">
+            <img src="img/toiture.jpg" alt="Toiture">
+            <div class="text-overlay">
+              <h2>Société Générale de Rénovation de Bâtiment</h2>
+              <p>Toiture</p>
             </div>
           </li>
         </ul>
@@ -125,10 +127,8 @@
     <!-- SECTION SERVICES -->
     <article>
       <h1>Services</h1>
-      <p>
-        Si vous avez le projet de rénover votre maison, vous pouvez contacter notre société,
-        nous répondrons à vos attentes.
-      </p>
+      <p>Si vous avez le projet de rénover votre maison, vous pouvez contacter notre société,
+        nous répondrons à vos attentes.</p>
       <ul>
         <li><a href="#">Électricité</a></li>
         <li><a href="#">Faux Plafonds</a></li>
@@ -144,6 +144,8 @@
         <li><a href="#">Peinture</a></li>
         <li><a href="#">Sanitaire</a></li>
         <li><a href="#">Plomberie</a></li>
+        <li><a href="#">Cloisons</a></li>
+        <li><a href="#">Déménagement</a></li>
         <li><a href="#">Isolation</a></li>
         <li><a href="#">Plafonnage</a></li>
         <li><a href="#">Chape</a></li>
@@ -152,21 +154,22 @@
       </ul>
     </article>
 
-    <!-- SECTION AVANT / APRÈS -->
+    <!-- SECTION GALERIE (carrousel) -->
     <section class="gallery-section">
       <h2 class="gallery-title">Expérience Client</h2>
 
-      <div class="splide" id="gallery-carousel">
+      <div class="splide" id="gallery-carousel" aria-label="Réalisations BDS">
         <div class="splide__track">
           <ul class="splide__list">
-            <li class="splide__slide"><img src="img/before_sdb.jpg" alt="Rendu 1" /></li>
-            <li class="splide__slide"><img src="img/after_sdb.jpg" alt="Rendu 2" /></li>
+            <li class="splide__slide"><img src="img/before_sdb.jpg" alt="Avant - Salle de bain"></li>
+            <li class="splide__slide"><img src="img/after_sdb.jpg" alt="Après - Salle de bain"></li>
           </ul>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- ================= FOOTER ================= -->
   <footer>
     <div class="footer-content">
       <div class="contact-info">
@@ -180,6 +183,7 @@
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="index.js"></script>
 </body>
