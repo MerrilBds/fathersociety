@@ -46,7 +46,7 @@ header {
   list-style: none;
   gap: 28px;
   margin: auto;
-  scale: 1.5;
+  scale: 1;
 }
 .navbar__menu a {
   color: #f5f5f5;
