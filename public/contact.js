@@ -1,38 +1,41 @@
-(function () {
- 
+document.addEventListener("DOMContentLoaded", function () {
 
+    const form = document.getElementById('form');
     const btn = document.getElementById('button');
 
-    document.getElementById('form')
-        .addEventListener('submit', function (event) {
-            event.preventDefault();
+    if (!form || !btn) {
+        console.error("❌ Formulaire introuvable !");
+        return;
+    }
 
-            btn.value = 'Envoie...';
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-            const serviceID = 'service_a8ye8rf';
-            const templateID = 'template_5xw2s6b';
+        btn.value = 'Envoi...';
+        btn.disabled = true;
 
-            // Récupére les valeurs des champs du formulaire
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+        const serviceID = "service_a8ye8rf";
+        const templateID = "template_5xw2s6b";
 
-            // Remplace les variables dans le template emailjs
-            const templateParams = {
-                name: name,
-                subject:subject,
-                email: email,
-                message: message
-            };
+        const templateParams = {
+            name: document.getElementById('name').value,
+            subject: document.getElementById('subject').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
 
-            emailjs.send(serviceID, templateID, templateParams)
-                .then(() => {
-                    btn.value = 'Envoyer';
-                    alert('Envoyé avec succès!');
-                }, (err) => {
-                    btn.value = 'Envoyer';
-                    alert(JSON.stringify(err));
-                });
-        });
-})();
+        emailjs.send(serviceID, templateID, templateParams)
+            .then(() => {
+                btn.value = "Envoyer";
+                btn.disabled = false;
+                alert("✔️ Message envoyé avec succès !");
+                form.reset();
+            })
+            .catch((err) => {
+                btn.value = "Envoyer";
+                btn.disabled = false;
+                console.error("Erreur EmailJS :", err);
+                alert("❌ Une erreur est survenue. Détails : " + JSON.stringify(err));
+            });
+    });
+});
