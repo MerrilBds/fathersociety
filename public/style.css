@@ -13,7 +13,7 @@ body {
 header { position: fixed; top:0; left:0; width:100%; z-index:100; }
 .navbar { background:#213; }          /* ta couleur d’origine (#213) */
 .navbar__inner{
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex; align-items:center; justify-content:flex-start;
   height:150px; border-bottom:2px solid #bf820b; padding:0 20px;
 }
 .logo img{ height:180px; transition:transform .3s ease; }
