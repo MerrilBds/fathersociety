@@ -73,7 +73,7 @@ h1{ font-family:"Playfair Display", serif; color:#fff; }
 }
 
 /*Contact logo*/
-.navbar__menu li.navbar__menu-item a img #accor{
+.navbar__menu li.navbar__menu-item a img#accor{
       height:42px;
 }
 
