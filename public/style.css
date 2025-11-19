@@ -174,36 +174,3 @@ footer{ background:#213; color:#e9eef7; text-align:center; padding:32px 0; }
   .overlay h2{ font-size:16px; }
   .overlay p{ font-size:22px; }
 }
-/* ================= FIX PAGE CONTACT ================= */
-
-/* Désactive totalement le hero et l'arrière-plan arrondi */
-.page-contact .hero,
-.page-contact .splide-hero,
-.page-contact .splide,
-.page-contact .splide__track {
-    display: none !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-}
-
-/* Réinitialise le fond qui faisait le bug */
-.page-contact main.special {
-    background: #0e0e0e !important;
-    position: relative;
-    padding-top: 240px !important;   /* corrige la superposition du header */
-}
-
-/* Empêche tout élément "hero" fantôme */
-.page-contact .hero__slide,
-.page-contact .hero__image {
-    display: none !important;
-}
-
-/* Sub-navbar toujours visible */
-.page-contact .sub_navbar {
-    position: sticky;
-    top: 150px;
-    z-index: 90;
-}
