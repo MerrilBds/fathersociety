@@ -45,6 +45,7 @@ header {
   display: flex;
   list-style: none;
   gap: 28px;
+  margin: auto;
 }
 .navbar__menu a {
   color: #f5f5f5;
