@@ -11,7 +11,7 @@ body {
 
 /* ================= HEADER ================= */
 header { position: fixed; top:0; left:0; width:100%; z-index:100; }
-.navbar { background:#213; }                 /* ta couleur d’origine (#213) */
+.navbar { background:#213; }          /* ta couleur d’origine (#213) */
 .navbar__inner{
   display:flex; align-items:center; justify-content:space-between;
   height:150px; border-bottom:2px solid #bf820b; padding:0 20px;
@@ -32,7 +32,7 @@ header { position: fixed; top:0; left:0; width:100%; z-index:100; }
 
 /* SUB NAVBAR — SEULE ELLE CHANGE AU SCROLL */
 .sub_navbar{
-  position: sticky; top:150px;                 /* collée sous la barre principale */
+  position: sticky; top:150px;           /* collée sous la barre principale */
   background: rgba(18, 8, 31, 0.95);
   border-bottom:2px solid #bf820b;
   color:#f5f5f5; padding:10px 0; z-index:90;
@@ -137,6 +137,119 @@ article a:hover{ color:#bf820b; }
 .splide__pagination__page{ background:rgba(255,255,255,.3); }
 .splide__pagination__page.is-active{ background:#fff; }
 
+/* ================= PAGE CONTACT STYLES AJOUTÉS ================= */
+
+/* --- Section des informations de contact --- */
+.styled-contact {
+    display: none; /* Cache si non utilisé */
+}
+
+/* Conteneur principal des coordonnées (Emplacement, Info, Disponible) */
+.section-contact {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 30px 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #f5f5f5;
+    background: #0c0a12; 
+}
+
+.section-contact > div {
+    /* Style pour les blocs Emplacement, Information, Disponible */
+    max-width: 30%;
+    padding: 15px;
+}
+
+.section-contact h3 {
+    color: #bf820b; /* Couleur d'accent pour les titres */
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.section-contact span {
+    display: block;
+    margin-bottom: 3px;
+    color: #e8e8e8;
+}
+.section-contact .icon {
+    font-size: 24px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+/* --- Section du Formulaire --- */
+.formulaire {
+    max-width: 900px; /* Largeur du formulaire */
+    margin: 40px auto 60px; /* Centrer et ajouter des marges */
+    padding: 30px;
+    color: #f5f5f5;
+    background: #111;
+    border-radius: 10px;
+}
+
+.formulaire h1 {
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 38px;
+    color: #bf820b;
+}
+
+/* Conteneur Flex pour les champs */
+#form {
+    display: flex;
+    flex-wrap: wrap; /* Important pour que les éléments passent à la ligne */
+    gap: 20px; /* Espace entre les groupes (vertical et horizontal) */
+    align-items: flex-start;
+}
+
+/* Styles pour les groupes de champs (Label + Input/Textarea) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    /* 3 champs par ligne: 33.33% - marge */
+    width: calc(33.33% - 14px); 
+}
+
+/* Le groupe Message prend toute la largeur */
+.form-group.full-width {
+    width: 100%;
+}
+
+/* Styles des Labels */
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #bf820b; /* Mettre les labels en couleur d'accent */
+}
+
+/* Styles des Inputs et Textarea */
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background: #222;
+    color: #f5f5f5;
+    font-size: 16px;
+    width: 100%; /* Prend toute la largeur de son conteneur .form-group */
+}
+
+/* Style du bouton d'envoi */
+#form input[type="submit"] {
+    width: 200px;
+    margin: 20px 0 0 auto; /* Aligner à droite sous le textarea */
+    padding: 12px 25px;
+    font-size: 18px;
+    /* Utilise les styles définis dans .button de votre CSS général */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #bf820b;
+    color: #fff;
+}
+
+
 /* ================= FOOTER ================= */
 footer{ background:#213; color:#e9eef7; text-align:center; padding:32px 0; }
 .footer-content{
@@ -153,6 +266,13 @@ footer{ background:#213; color:#e9eef7; text-align:center; padding:32px 0; }
   .hero__text{ text-align:center; }
 }
 
+@media (max-width: 900px) {
+    /* Responsive Formulaire Tablette */
+    .formulaire {
+        max-width: 95%;
+    }
+}
+
 @media (max-width: 768px){
   .navbar__inner{ height:120px; }
   .sub_navbar{ top:120px; }
@@ -166,6 +286,20 @@ footer{ background:#213; color:#e9eef7; text-align:center; padding:32px 0; }
   #gallery-carousel{ width:95%; }
   #gallery-carousel .splide__slide{ aspect-ratio:4/3; }
   .splide__arrow{ width:40px; height:40px; }
+  
+  /* Responsive Formulaire Tablette */
+  .form-group:not(.full-width) {
+      width: calc(50% - 10px); /* 2 champs par ligne */
+  }
+  
+  /* Les infos de contact passent en colonne */
+  .section-contact {
+      flex-direction: column;
+      gap: 15px;
+  }
+  .section-contact > div {
+      max-width: 100%;
+  }
 }
 
 @media (max-width: 480px){
@@ -173,4 +307,9 @@ footer{ background:#213; color:#e9eef7; text-align:center; padding:32px 0; }
   .hero__image img, .hero__slide{ min-height:300px; }
   .overlay h2{ font-size:16px; }
   .overlay p{ font-size:22px; }
+  
+  /* Responsive Formulaire Mobile */
+  .form-group {
+      width: 100%; /* 1 champ par ligne */
+  }
 }
