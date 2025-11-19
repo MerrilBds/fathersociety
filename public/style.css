@@ -87,7 +87,7 @@ header {
 .subnavbar__menu {
   display: flex;
   list-style: none;
-  gap: 28px;
+  gap: 8px;
   justify-content: center;
   align-items: center;
 }
