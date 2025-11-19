@@ -72,13 +72,6 @@ h1{ font-family:"Playfair Display", serif; color:#fff; }
   background:#111;
 }
 
-/*Contact logo*/
-#accor {
-    width: 42px;
-    height: 42px;
-    /* Optional: pour s'assurer que l'image ne se déforme pas */
-    object-fit: contain;
-}
 
 /* Slide texte/logo */
 .hero__slide{
