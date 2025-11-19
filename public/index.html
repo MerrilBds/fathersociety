@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <!-- SUB NAVBAR : seul élément affecté par l'effet scroll -->
+      <!-- SUB NAVBAR -->
       <div class="sub_navbar" id="subbar">
         <ul class="subnavbar__menu">
           <li><a href="#">Faux Plafonds</a></li>
@@ -58,104 +58,131 @@
   </header>
 
   <main>
-    <!-- HERO (H3-C) : slider full-width, coins 45px, glow doré, fond violet autour -->
-    <section class="hero">
-      <div class="splide splide-hero" aria-label="Présentation BDS">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">
-              <div class="hero__slide">
-                <img src="img/logo-trans.svg" alt="BDS Société Logo Transparent" class="hero__logo" loading="lazy">
-                <div class="hero__text">
-                  <h1>Qui Sommes-Nous ?</h1>
-                  <p>
-                    BDS Société, entreprise générale de rénovation : électricité, plomberie, sanitaire,
-                    démolition, toiture, carrelage, cloisons et plus encore. Nous créons des espaces
-                    fonctionnels et esthétiques avec exigence & innovation.
-                  </p>
-                </div>
-              </div>
-            </li>
+    <!-- HERO -->
+    <section class="hero-pro">
+      <div class="hero-pro-image">
+        <!-- mets ici une grande image panoramique de chantier / rénovation -->
+        <img src="img/hero-renovation.jpg" alt="Travaux de rénovation BDS Société">
+      </div>
 
-            <!-- Slides visuelles avec overlay texte -->
-            <li class="splide__slide">
-              <div class="hero__image">
-                <img src="img/enduisage.jpg" alt="Enduisage" loading="lazy">
-                <div class="overlay">
-                  <h2>Société Générale de Rénovation de Bâtiment</h2>
-                  <p>Enduisage</p>
-                </div>
-              </div>
-            </li>
+      <div class="hero-pro-overlay">
+        <h1>
+          Votre spécialiste en rénovation <span>intérieure</span> et <span>extérieure</span> en Belgique
+        </h1>
+        <p>
+          BDS Société met à votre disposition une équipe expérimentée pour vos travaux
+          d’électricité, plomberie, sanitaire, enduisage, démolition, toiture, carrelage,
+          cloisons et bien plus encore. Nous garantissons un travail soigné, durable
+          et conforme aux exigences de votre projet.
+        </p>
+        <a href="contact.html" class="hero-pro-btn">Demande de devis gratuite</a>
+      </div>
+    </section>
 
-            <li class="splide__slide">
-              <div class="hero__image">
-                <img src="img/f-pf.jpg" alt="Faux-Plafonds" loading="lazy">
-                <div class="overlay">
-                  <h2>Société Générale de Rénovation de Bâtiment</h2>
-                  <p>Faux-Plafonds</p>
-                </div>
-              </div>
-            </li>
+    <!-- A PROPOS / POURQUOI NOUS -->
+    <section class="section section-light">
+      <h2 class="section-title">Pourquoi choisir BDS Société ?</h2>
+      <p class="section-subtitle">
+        Une équipe sérieuse, polyvalente et disponible pour vos travaux de rénovation,
+        que ce soit pour un appartement, une maison ou un immeuble complet.
+      </p>
 
-            <li class="splide__slide">
-              <div class="hero__image">
-                <img src="img/plomberie.jpg" alt="Plomberie" loading="lazy">
-                <div class="overlay">
-                  <h2>Société Générale de Rénovation de Bâtiment</h2>
-                  <p>Plomberie</p>
-                </div>
-              </div>
-            </li>
+      <div class="about-grid">
+        <img src="img/about-1.jpg" alt="Chantier BDS 1">
+        <img src="img/about-2.jpg" alt="Chantier BDS 2">
 
-            <li class="splide__slide">
-              <div class="hero__image">
-                <img src="img/toiture.jpg" alt="Toiture" loading="lazy">
-                <div class="overlay">
-                  <h2>Société Générale de Rénovation de Bâtiment</h2>
-                  <p>Toiture</p>
-                </div>
-              </div>
-            </li>
+        <div class="about-text">
+          <h3>Un accompagnement de A à Z</h3>
+          <p>
+            Nous vous conseillons à chaque étape : choix des matériaux, optimisation de l’espace,
+            coordination des corps de métier, suivi du planning et vérification finale.
+          </p>
+
+          <ul class="about-list">
+            <li><span class="check">✔</span> Patron présent et impliqué sur chantier</li>
+            <li><span class="check">✔</span> Respect des délais annoncés</li>
+            <li><span class="check">✔</span> Matériaux de qualité et travail soigné</li>
+            <li><span class="check">✔</span> Devis clairs et transparents</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- SERVICES -->
-    <article>
-      <h1>Services</h1>
-      <p>
-        Vous envisagez de rénover ? Contactez-nous, nous répondons à vos attentes.
+    <section class="section services">
+      <h2 class="section-title">Nos services de rénovation</h2>
+      <p class="services-intro">
+        BDS Société intervient pour des rénovations complètes ou partielles,
+        en intérieur comme en extérieur. Voici un aperçu des principaux services :
       </p>
-      <ul>
-        <li><a href="#">Électricité</a></li>
-        <li><a href="#">Faux Plafonds</a></li>
-        <li><a href="#">Démolition</a></li>
-        <li><a href="#">Toiture</a></li>
-        <li><a href="#">Enduisage</a></li>
-        <li><a href="#">Data</a></li>
-        <li><a href="#">Parlophonie</a></li>
-        <li><a href="#">Nettoyage</a></li>
-        <li><a href="#">Chassis</a></li>
-        <li><a href="#">Cloisons</a></li>
-        <li><a href="#">Carrelage</a></li>
-        <li><a href="#">Peinture</a></li>
-        <li><a href="#">Sanitaire</a></li>
-        <li><a href="#">Plomberie</a></li>
-      </ul>
-    </article>
 
-    <!-- GALERIE / RÉFÉRENCES CLIENTS -->
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-number">01</div>
+          <div class="service-title">Electricité & Data</div>
+          <p class="service-text">
+            Mise en conformité, tableau, éclairage, câblage réseau…
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">02</div>
+          <div class="service-title">Plomberie & Sanitaire</div>
+          <p class="service-text">
+            Salle de bain, cuisine, arrivées et évacuations, installations complètes.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">03</div>
+          <div class="service-title">Enduisage, Plafonnage & Peinture</div>
+          <p class="service-text">
+            Finitions propres, plafonds, murs lisses prêts à peindre ou tapisser.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">04</div>
+          <div class="service-title">Faux plafonds & Cloisons</div>
+          <p class="service-text">
+            Création ou modification d’espaces, isolation acoustique et thermique.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">05</div>
+          <div class="service-title">Carrelage & Chape</div>
+          <p class="service-text">
+            Pose dans les pièces d’eau, cuisines, terrasses, sols intérieurs.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">06</div>
+          <div class="service-title">Toiture & Extérieur</div>
+          <p class="service-text">
+            Travaux de toiture, démolition, maçonnerie et aménagement extérieur.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIE / AVANT-APRES -->
     <section class="gallery-section">
-      <h2 class="gallery-title">Photos</h2>
+      <h2 class="gallery-title">Quelques réalisations</h2>
+      <p class="gallery-subtitle">
+        Avant / après – transformation complète d’espaces intérieurs.
+      </p>
 
       <div class="splide" id="gallery-carousel" aria-label="Références avant/après">
         <div class="splide__track">
           <ul class="splide__list">
-            <li class="splide__slide"><img src="img/before_sdb.jpg" alt="Avant - Salle de bain" loading="lazy"></li>
-            <li class="splide__slide"><img src="img/after_sdb.jpg" alt="Après - Salle de bain" loading="lazy"></li>
-           
+            <li class="splide__slide">
+              <img src="img/before_sdb.jpg" alt="Avant - Salle de bain">
+            </li>
+            <li class="splide__slide">
+              <img src="img/after_sdb.jpg" alt="Après - Salle de bain">
+            </li>
           </ul>
         </div>
       </div>
