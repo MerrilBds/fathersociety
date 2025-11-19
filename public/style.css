@@ -171,6 +171,9 @@ main {
   font-size: 18px;
   transition: 0.25s;
 }
+.hero-pro-btn #contactor {
+  padding:  4px 30px !important;
+}
 .hero-pro-btn:hover {
   background: #d99a19;
   transform: translateY(-3px);
