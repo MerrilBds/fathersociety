@@ -172,7 +172,7 @@ main {
   transition: 0.25s;
 }
  a#contactor.hero-pro-btn {
-  padding:  4px 30px !important;
+  padding:  12px  !important;
 }
 .hero-pro-btn:hover {
   background: #d99a19;
