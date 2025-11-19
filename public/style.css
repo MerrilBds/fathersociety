@@ -2,360 +2,586 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;0,700;0,800;0,900;1,100&display=swap");
 
 /* RESET */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
-  display: flex; flex-direction: column;
-  font-family: "Raleway", sans-serif; background:#fff;
-  color:#222;
+  display: flex;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+  background: #fff;
+  color: #222;
 }
 
-/* ================= HEADER (AMÉLIORÉ) ================= */
-header { position: fixed; top:0; left:0; width:100%; z-index:100; }
-.navbar { background:#213; }
-.navbar__inner{
-  display:flex; align-items:center; 
-  /* MODIFICATION CLÉ : Utiliser space-between pour pousser le logo et le bouton Contact aux extrémités */
-  justify-content:space-between; 
-  height:150px; border-bottom:2px solid #bf820b; padding:0 20px;
-  max-width: 1300px; /* Limiter la largeur interne pour l'alignement */
-  margin: 0 auto;
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+.navbar {
+  background: #213; /* ta couleur d’origine */
+}
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 150px;
+  border-bottom: 2px solid #bf820b;
+  padding: 0 24px;
+}
+.logo img {
+  height: 180px;
+  transition: transform 0.3s ease;
+}
+.logo img:hover {
+  transform: rotate(10deg);
+}
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  gap: 18px;
+}
+.navbar__menu a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+}
+.navbar__menu a:hover {
+  color: #bf820b;
 }
 
-.logo img{ height:180px; transition:transform .3s ease; }
-.logo img:hover{ transform:rotate(10deg); }
-
-.navbar__menu{ 
-  display:flex; 
-  list-style:none; 
-  gap:18px; /* Augmenter l'espace entre les liens pour la clarté */
-  /* MODIFICATION CLÉ : Ajout de marge automatique pour rapprocher le menu du logo 
-     (Ceci annule l'effet space-between si aucun autre élément n'est au centre) */
-  margin-right: auto; 
-  margin-left: 20px; 
-  flex-wrap: wrap; /* Permettre aux liens de passer à la ligne si nécessaire */
+/* Bouton header */
+.button {
+  background: #bf820b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.button:hover {
+  transform: scale(1.04);
+  background: #3388cc;
 }
 
-.navbar__menu a{ color:#f5f5f5; text-decoration:none; font-weight:500; font-size: 15px; }
-.navbar__menu a:hover{ color:#bf820b; }
-
-/* Correction du positionnement du bouton Contact */
-#right { margin-left: 30px; } 
-
-.button{
-  background:#bf820b; color:#fff; border:none; padding:10px 20px;
-  font-size:16px; border-radius:6px; cursor:pointer;
-  transition:transform .2s ease, background .2s ease;
-  white-space: nowrap; /* Empêche le bouton Contactez-Nous de se couper */
+/* ================= SOUS-NAVBAR ================= */
+.sub_navbar {
+  position: sticky;
+  top: 150px; /* collée sous la barre principale */
+  background: rgba(18, 8, 31, 0.95);
+  border-bottom: 2px solid #bf820b;
+  color: #f5f5f5;
+  padding: 10px 0;
+  z-index: 90;
+  transition: backdrop-filter 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
-.button:hover{ transform:scale(1.04); background:#3388cc; }
-
-/* SUB NAVBAR */
-.sub_navbar{
-  position: sticky; top:150px;
-  background: rgba(18, 8, 31, 0.95);
-  border-bottom:2px solid #bf820b;
-  color:#f5f5f5; padding:10px 0; z-index:90;
-  transition: backdrop-filter .25s ease, box-shadow .25s ease, background .25s ease;
+.subnavbar__menu {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  justify-content: center;
+  align-items: center;
 }
-.subnavbar__menu{
-  display:flex; list-style:none; gap:28px; justify-content:center; align-items:center;
-  max-width: 1200px; margin: 0 auto; padding: 0 20px;
+.subnavbar__menu a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 15px;
 }
-.subnavbar__menu a{ color:#f2f2f2; text-decoration:none; }
-.subnavbar__menu a:hover{ color:#bf820b; }
-
-.sub_navbar.scrolled{
-  backdrop-filter: blur(8px);
-  background: rgba(18, 8, 31, 0.78);
-  box-shadow: 0 0 0 1px rgba(191,130,11,0.45),
-              0 10px 28px rgba(191,130,11,0.22);
+.subnavbar__menu a:hover {
+  color: #bf820b;
 }
 
-/* ================= MAIN LAYOUT (AMÉLIORÉ) ================= */
-main{
-  padding-top: 202px;
-  background:#0c0a12;
-}
-h1{ font-family:"Playfair Display", serif; color:#fff; }
-
-/* ================= HERO (Taille du texte augmentée) ================= */
-.hero{
-  padding:28px 16px 8px; 
-}
-.splide-hero .splide__track{
-  border-radius:45px; overflow:hidden;
-  box-shadow:
-    0 0 0 1px rgba(191,130,11,0.50),
-    0 18px 40px rgba(191,130,11,0.28);
-  background:#111;
+/* Effet scroll appliqué UNIQUEMENT à la sub_navbar */
+.sub_navbar.scrolled {
+  backdrop-filter: blur(8px);
+  background: rgba(18, 8, 31, 0.78);
+  box-shadow:
+    0 0 0 1px rgba(191, 130, 11, 0.45),
+    0 10px 28px rgba(191, 130, 11, 0.22);
 }
 
-/* Slide texte/logo */
-.hero__slide{
-  display:flex; align-items:center; justify-content:center; gap:40px; /* Augmenter le gap */
-  min-height: 520px; /* Augmenter la hauteur */
-  background:#213; 
-  padding:60px 28px; /* Augmenter le padding */
+/* ================= MAIN LAYOUT ================= */
+main,
+main.special {
+  padding-top: 202px; /* 150 (header) + ~50 (subbar) + marge */
+  background: #0c0a12;
 }
-.hero__logo{ width:220px; height:auto; filter: drop-shadow(0 4px 16px rgba(0,0,0,.35)); }
-.hero__text{ max-width:900px; text-align:left; color:#f7f7f7; }
-.hero__text h1{ 
-  font-size:56px; /* Texte plus grand pour l'impact */
-  margin-bottom:15px; 
-  font-weight: 700;
+main {
+  min-height: calc(100vh - 220px);
+}
+
+/* ================= HERO PRO ================= */
+.hero-pro {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: #0c0a12;
+}
+.hero-pro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+}
+.hero-pro-overlay {
+  position: absolute;
+  left: 6%;
+  max-width: 600px;
   color: #fff;
 }
-.hero__text p{ font-size:20px; line-height:1.7; color:#e8e8e8; }
+.hero-pro-overlay h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 46px;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+.hero-pro-overlay h1 span {
+  color: #bf820b;
+  font-weight: 700;
+}
+.hero-pro-overlay p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e5e5e5;
+  margin-bottom: 35px;
+  max-width: 580px;
+}
+.hero-pro-btn {
+  display: inline-block;
+  background: #bf820b;
+  padding: 14px 30px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  transition: 0.25s;
+}
+.hero-pro-btn:hover {
+  background: #d99a19;
+  transform: translateY(-3px);
+}
 
-/* Slide image + overlay */
-.hero__image{ position:relative; min-height:520px; } /* Hauteur augmentée */
-.hero__image img{ width:100%; height:520px; object-fit:cover; display:block; }
-.overlay{
-  position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-end;
-  justify-content:flex-end; padding:40px; /* Augmenter le padding */
-  background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.65) 100%);
-  color:#fff; text-align:right;
+/* ================= SECTION "POURQUOI NOUS" ================= */
+.section {
+  padding: 70px 16px;
 }
-.overlay h2{ font-size:24px; font-weight:600; opacity:.95; }
-.overlay p{ font-size:42px; font-weight:800; margin-top:8px; color:#ffd479; } /* Texte plus grand */
+.section-light {
+  background: #f7f7f7;
+  color: #222;
+}
+.section-dark {
+  background: #0c0a12;
+  color: #f5f5f5;
+}
+.section-title {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+.section-subtitle {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 40px;
+  color: #666;
+}
 
-/* flèches circulaires Splide (communes) */
-.splide__arrow{
-  width:50px; height:50px; border-radius:50%;
-  background:rgba(255,255,255,0.18);
-  border:1px solid rgba(255,255,255,0.35);
-  transition:transform .2s ease, background .2s ease;
+/* Grille "A propos" */
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1.6fr;
+  gap: 22px;
 }
-.splide__arrow:hover{ transform:scale(1.1); background:rgba(255,255,255,0.35); }
+.about-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+.about-text {
+  padding: 12px 10px;
+}
+.about-text h3 {
+  font-size: 22px;
+  color: #bf820b;
+  margin-bottom: 12px;
+}
+.about-text p {
+  line-height: 1.6;
+  color: #555;
+}
+.about-list {
+  margin-top: 16px;
+  list-style: none;
+}
+.about-list li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.about-list span.check {
+  color: #bf820b;
+  font-weight: 700;
+}
 
-/* ================= SERVICES (AMÉLIORÉ) ================= */
-article{ background:#f9f9f9; padding:80px 0; text-align:center; } /* Padding augmenté */
-article h1{ color:#333; font-size:38px; margin-bottom:18px; } /* Taille augmentée */
-article p{ color:#555; margin-bottom:40px; font-size: 18px; } /* Taille augmentée et marge */
-article ul{
-  list-style:none;
-  display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); /* Plus de colonnes possibles */
-  gap:20px; padding:0 16px; max-width:1200px; margin:0 auto;
+/* ================= SERVICES ================= */
+.services {
+  background: #ffffff;
 }
-article li{
-  background:#fff; padding:25px 18px; border-radius:10px;
-  box-shadow:0 6px 18px rgba(0,0,0,.08);
-  transition:transform .2s ease, box-shadow .2s ease, border 0.3s ease;
-  border: 1px solid transparent;
+.services-intro {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 40px;
+  color: #555;
 }
-article li:hover{ 
-  transform:translateY(-4px); 
-  box-shadow:0 12px 26px rgba(0,0,0,.12); 
-  border: 1px solid #bf820b; /* Accent doré au survol */
+.service-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 0 16px;
 }
-article a{ color:#333; text-decoration:none; font-weight:700; }
-article a:hover{ color:#bf820b; }
+.service-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 22px 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  border-top: 3px solid #bf820b;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+}
+.service-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #bf820b;
+  margin-bottom: 6px;
+}
+.service-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.service-text {
+  font-size: 14px;
+  color: #666;
+}
 
-/* ================= GALERIE (AMÉLIORÉ) ================= */
-.gallery-section{ text-align:center; padding:90px 0; background:#0e0e0e; color:#fff; } /* Padding augmenté */
-.gallery-title{ font-size:38px; font-weight:700; margin-bottom:35px; color: #fff; }
-#gallery-carousel{ width:90%; max-width:1100px; margin:0 auto; }
-#gallery-carousel .splide__slide{
-  position:relative; overflow:hidden; border-radius:16px; aspect-ratio:16/9; background:#111;
-  /* Bordure dorée subtile pour un aspect premium */
-  border: 1px solid rgba(191,130,11,0.2); 
+/* ================= GALERIE ================= */
+.gallery-section {
+  text-align: center;
+  padding: 72px 0;
+  background: #0e0e0e;
+  color: #fff;
 }
-#gallery-carousel img{
-  width:100%; height:100%; object-fit:cover; display:block; border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,.5);
-  transition:transform .5s ease, box-shadow .5s ease;
+.gallery-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
-#gallery-carousel img:hover{ transform:scale(1.05); box-shadow:0 16px 40px rgba(0,0,0,.65); } /* Zoom plus marqué */
-.splide__pagination__page{ background:rgba(255,255,255,.3); }
-.splide__pagination__page.is-active{ background:#bf820b; } /* Pagination en couleur d'accent */
+.gallery-subtitle {
+  color: #ccc;
+  margin-bottom: 28px;
+}
+#gallery-carousel {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#gallery-carousel .splide__slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  aspect-ratio: 16 / 9;
+  background: #111;
+}
+#gallery-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+#gallery-carousel img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+.splide__pagination__page {
+  background: rgba(255, 255, 255, 0.3);
+}
+.splide__pagination__page.is-active {
+  background: #fff;
+}
+.splide__arrow {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.splide__arrow:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.28);
+}
 
-/* ================= PAGE CONTACT STYLES ================= */
+/* ================= CONTACT PAGE ================= */
 
-/* --- Section des informations de contact --- */
+/* Titre "Nous contacter" */
 .styled-contact {
-    display: none; 
+  text-align: center;
+  color: #f5f5f5;
+  font-size: 34px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.styled-contact span {
+  color: #bf820b;
 }
 
-/* Conteneur principal des coordonnées (Marge augmentée) */
+/* Blocs d’informations */
 .section-contact {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 50px 20px 80px; /* Marge supérieure et inférieure augmentées */
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #f5f5f5;
-    background: #0c0a12; 
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 30px 20px 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  color: #f5f5f5;
 }
-
 .section-contact > div {
-    max-width: 30%;
-    padding: 15px;
+  flex: 1;
+  min-width: 220px;
+  background: #111;
+  border-radius: 10px;
+  padding: 18px 16px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
 }
-
+.section-contact .contenu {
+  text-align: left;
+}
 .section-contact h3 {
-    color: #bf820b;
-    margin-bottom: 5px;
-    font-size: 22px; /* Titre plus grand */
+  color: #bf820b;
+  margin-bottom: 8px;
+  font-size: 18px;
 }
 .section-contact span {
-    display: block;
-    margin-bottom: 3px;
-    color: #e8e8e8;
+  display: block;
+  margin-bottom: 3px;
+  color: #e8e8e8;
 }
 .section-contact .icon {
-    font-size: 28px; /* Icône plus grande */
-    margin-right: 10px;
-    display: inline-block;
+  font-size: 24px;
+  margin-bottom: 6px;
 }
 
-/* --- Section du Formulaire --- */
+/* Formulaire */
 .formulaire {
-    max-width: 900px; 
-    margin: 60px auto 80px; /* Marge supérieure et inférieure augmentées */
-    padding: 40px; /* Padding augmenté */
-    color: #f5f5f5;
-    background: #111;
-    border-radius: 10px;
-    /* Ombre subtile pour le faire ressortir */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  max-width: 900px;
+  margin: 40px auto 60px;
+  padding: 30px;
+  color: #f5f5f5;
+  background: #111;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
-
 .formulaire h1 {
-    text-align: left;
-    margin-bottom: 30px; /* Marge augmentée */
-    font-size: 42px; /* Taille augmentée */
-    color: #bf820b;
+  text-align: left;
+  margin-bottom: 25px;
+  font-size: 32px;
+  color: #bf820b;
+  font-family: "Playfair Display", serif;
 }
 
-/* Conteneur Flex pour les champs */
+/* Grille du formulaire */
 #form {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 25px; /* Augmenter l'espace entre les groupes */
-    align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
 }
-
-/* Styles pour les groupes de champs (Label + Input/Textarea) */
 .form-group {
-    display: flex;
-    flex-direction: column;
-    width: calc(33.33% - 17px); /* Ajustement pour le nouveau gap */
-    margin-bottom: 10px; /* Espace vertical entre les groupes */
+  display: flex;
+  flex-direction: column;
+  width: calc(33.33% - 14px);
 }
-
-/* Le groupe Message prend toute la largeur */
 .form-group.full-width {
-    width: 100%;
+  width: 100%;
 }
-
-/* Styles des Labels */
 .form-group label {
-    font-weight: 700; /* Plus gras */
-    margin-bottom: 8px;
-    color: #bf820b;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #bf820b;
 }
-
-/* Styles des Inputs et Textarea */
 .form-group input,
 .form-group textarea {
-    padding: 15px 12px; /* Padding augmenté */
-    border: 1px solid #444; /* Bordure plus visible */
-    border-radius: 6px;
-    background: #222;
-    color: #f5f5f5;
-    font-size: 16px; 
-    width: 100%; 
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #222;
+  color: #f5f5f5;
+  font-size: 16px;
+  width: 100%;
+}
+.form-group textarea {
+  resize: vertical;
 }
 
-/* Style du bouton d'envoi */
+/* Bouton du formulaire */
 #form input[type="submit"] {
-    width: 220px; /* Plus large */
-    margin: 30px 0 0 auto; /* Marge supérieure augmentée et aligné à droite */
-    padding: 15px 25px; 
-    font-size: 18px; 
-    font-weight: 700;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    background: #bf820b;
-    color: #fff;
+  width: 200px;
+  margin: 10px 0 0 auto;
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #bf820b;
+  color: #fff;
+  transition: 0.2s;
 }
-
+#form input[type="submit"]:hover {
+  background: #d99a19;
+  transform: translateY(-2px);
+}
 
 /* ================= FOOTER ================= */
-footer{ 
-  background:#213; 
-  color:#e9eef7; 
-  text-align:center; 
-  padding:40px 0; /* Padding augmenté */
-  border-top: 2px solid #bf820b;
+footer {
+  background: #213;
+  color: #e9eef7;
+  text-align: center;
+  padding: 32px 0;
 }
-.footer-content{
-  display:flex; justify-content:center;
-  max-width:1200px; margin:0 auto; padding:0 20px;
+.footer-content {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-.contact-info h3{ font-size:24px; margin-bottom:12px; color: #bf820b; }
-.contact-info p{ margin:5px 0; }
-.copyright{ margin-top:20px; color:#bf820b; font-size: 14px; }
+.contact-info h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.contact-info p {
+  margin: 3px 0;
+}
+.copyright {
+  margin-top: 10px;
+  color: #bf820b;
+}
 
 /* ============= RESPONSIVE ============= */
 @media (max-width: 1200px) {
-    /* Évite que les liens du menu ne s'étalent trop */
-    .navbar__menu {
-        flex-wrap: wrap; 
-        margin-right: 0; /* Laisse l'espace se répartir si nécessaire */
-    }
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
-
-@media (max-width: 1024px){
-  .hero__slide{ flex-direction:column; text-align:center; min-height: 480px; }
-  .hero__text{ text-align:center; }
-  .hero__image img, .hero__slide { min-height: 480px; }
-  .hero__text h1 { font-size: 48px; }
-  .navbar__inner { padding: 0 10px; }
+@media (max-width: 1024px) {
+  .hero-pro-overlay h1 {
+    font-size: 38px;
+  }
+  .hero-pro-overlay p {
+    font-size: 17px;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-@media (max-width: 768px){
-  .navbar__inner{ height:120px; }
-  .sub_navbar{ top:120px; }
-  main{ padding-top: 172px; }       
-
-  .hero{ padding:20px 10px 6px; }
-  .hero__image img, .hero__slide{ min-height:380px; }
-  .overlay p{ font-size:26px; }
-  .hero__text h1{ font-size:38px; }
-  .hero__logo{ width:160px; }
-  #gallery-carousel{ width:95%; }
-  #gallery-carousel .splide__slide{ aspect-ratio:4/3; }
-  .splide__arrow{ width:40px; height:40px; }
-  
-  /* Responsive Formulaire Tablette */
-  .form-group:not(.full-width) {
-      width: calc(50% - 13px); /* 2 champs par ligne */
-  }
-  
-  /* Les infos de contact passent en colonne */
-  .section-contact {
-      flex-direction: column;
-      gap: 20px;
-      padding: 40px 20px 60px;
-  }
-  .section-contact > div {
-      max-width: 100%;
-  }
-  .formulaire { padding: 30px 20px; }
+@media (max-width: 900px) {
+  .formulaire {
+    max-width: 95%;
+  }
 }
-
-@media (max-width: 480px){
-  .navbar__menu{ display:none; }   
-  .hero__image img, .hero__slide{ min-height:300px; }
-  .overlay h2{ font-size:16px; }
-  .overlay p{ font-size:22px; }
-  
-  /* Responsive Formulaire Mobile */
-  .form-group {
-      width: 100%; /* 1 champ par ligne */
-  }
-  article ul { grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); }
+@media (max-width: 768px) {
+  .navbar__inner {
+    height: 120px;
+  }
+  .sub_navbar {
+    top: 120px;
+  }
+  main,
+  main.special {
+    padding-top: 172px;
+  }
+  .hero-pro {
+    height: 75vh;
+  }
+  .hero-pro-overlay {
+    left: 5%;
+    max-width: 90%;
+  }
+  .hero-pro-overlay h1 {
+    font-size: 32px;
+  }
+  .section-contact {
+    flex-direction: column;
+  }
+  .section-contact > div {
+    width: 100%;
+  }
+  .form-group:not(.full-width) {
+    width: calc(50% - 10px);
+  }
+  #gallery-carousel {
+    width: 95%;
+  }
+  #gallery-carousel .splide__slide {
+    aspect-ratio: 4 / 3;
+  }
+  .splide__arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .navbar__menu {
+    display: none; /* version simple pour mobile */
+  }
+}
+@media (max-width: 480px) {
+  .hero-pro {
+    height: 65vh;
+    min-height: 420px;
+  }
+  .hero-pro-overlay h1 {
+    font-size: 26px;
+  }
+  .hero-pro-overlay p {
+    font-size: 16px;
+  }
+  .hero-pro-btn {
+    padding: 12px 22px;
+    font-size: 16px;
+  }
+  .form-group {
+    width: 100%;
+  }
 }
